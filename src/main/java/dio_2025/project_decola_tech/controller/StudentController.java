@@ -1,9 +1,9 @@
 package dio_2025.project_decola_tech.controller;
 
+import java.util.List;
 import dio_2025.project_decola_tech.domain.Student;
 import dio_2025.project_decola_tech.service.implementation.StudentService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -33,18 +33,6 @@ public class StudentController {
                 .buildAndExpand(studentCreated.getId())
                 .toUri();
         return ResponseEntity.created(location).body(studentCreated);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Student> update(@PathVariable Long id, @RequestBody Student studentToUpdate) {
-        var updatedStudent = studentService.update(id, studentToUpdate);
-        return ResponseEntity.ok(updatedStudent);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
-        studentService.delete(id);
-        return ResponseEntity.noContent().build();
     }
 
 }

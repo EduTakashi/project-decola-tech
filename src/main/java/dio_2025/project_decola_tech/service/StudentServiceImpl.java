@@ -4,7 +4,7 @@ import dio_2025.project_decola_tech.domain.Student;
 import dio_2025.project_decola_tech.repository.StudentRepository;
 import dio_2025.project_decola_tech.service.implementation.StudentService;
 import org.springframework.stereotype.Service;
-import java.util.List;
+
 
 import java.util.NoSuchElementException;
 
@@ -30,26 +30,6 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.save(studentToCreate);
     }
 
-    @Override
-    public Student update(Long id, Student studentToUpdate) {
-        Student existingStudent = findById(id);
-        existingStudent.setName(studentToUpdate.getName());
-        existingStudent.setRegistration(studentToUpdate.getRegistration());
-        existingStudent.setCourse(studentToUpdate.getCourse());
-        existingStudent.setNews(studentToUpdate.getNews());
-        return studentRepository.save(existingStudent);
-    }
-
-    @Override
-    public List<Student> findAll() {
-        return studentRepository.findAll();
-    }
-
-    @Override
-    public void delete(Long id) {
-        Student student = findById(id);
-        studentRepository.delete(student);
-    }
 }
 
 

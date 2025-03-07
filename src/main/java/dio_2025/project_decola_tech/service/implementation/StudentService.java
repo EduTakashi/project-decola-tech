@@ -9,9 +9,4 @@ public interface StudentService {
 
     Student create(Student studentToCreate);
 
-    Student update(Long id, Student studentToUpdate);
-
-    List<Student> findAll();
-
-    void delete(Long id);
 }
