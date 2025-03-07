@@ -1,6 +1,5 @@
 package dio_2025.project_decola_tech.controller;
 
-import java.util.List;
 import dio_2025.project_decola_tech.domain.Student;
 import dio_2025.project_decola_tech.service.implementation.StudentService;
 import org.springframework.http.ResponseEntity;
