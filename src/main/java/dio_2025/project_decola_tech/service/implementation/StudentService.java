@@ -1,6 +1,6 @@
 package dio_2025.project_decola_tech.service.implementation;
 
-
+import java.util.List;
 import dio_2025.project_decola_tech.domain.Student;
 
 public interface StudentService {
@@ -9,4 +9,9 @@ public interface StudentService {
 
     Student create(Student studentToCreate);
 
+    Student update(Long id, Student studentToUpdate);
+
+    void delete(Long id);
+
+    List<Student> findAll();
 }

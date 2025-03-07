@@ -4,7 +4,7 @@ import dio_2025.project_decola_tech.domain.Student;
 import dio_2025.project_decola_tech.repository.StudentRepository;
 import dio_2025.project_decola_tech.service.implementation.StudentService;
 import org.springframework.stereotype.Service;
-
+import java.util.List;
 
 import java.util.NoSuchElementException;
 
@@ -23,12 +23,35 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<Student> findAll() {
+        return studentRepository.findAll();
+    }
+
+    @Override
     public Student create(Student studentToCreate){
         if(studentRepository.existsByRegistrationNumber(studentToCreate.getRegistration().getNumber())){
             throw new IllegalArgumentException("O estudante com esse Id já existe");
         }
         return studentRepository.save(studentToCreate);
     }
+
+    @Override
+    public Student update(Long id, Student studentToUpdate) {
+        Student existingStudent = findById(id);
+        existingStudent.setName(studentToUpdate.getName());
+        existingStudent.setRegistration(studentToUpdate.getRegistration());
+        return studentRepository.save(existingStudent);
+    }
+
+    @Override
+    public void delete(Long id) {
+        Student student = findById(id);
+        studentRepository.delete(student);
+    }
+
+
+
+
 
 }
 
