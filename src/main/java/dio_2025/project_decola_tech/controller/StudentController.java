@@ -26,7 +26,7 @@ public class StudentController {
     }
 
     @PostMapping("{id}")
-    public ResponseEntity<Student> create(@RequestBody Student studentToCreate){
+    public ResponseEntity<Student> create(@RequestBody Student studentToCreate) {
         var studentCreated = studentService.create(studentToCreate);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("{id}")
@@ -34,4 +34,20 @@ public class StudentController {
                 .toUri();
         return ResponseEntity.created(location).body(studentCreated);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Student> update(@PathVariable Long id, @RequestBody Student studentToUpdate) {
+        var updatedStudent = studentService.update(id, studentToUpdate);
+        return ResponseEntity.ok(updatedStudent);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        studentService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
+
+
+
