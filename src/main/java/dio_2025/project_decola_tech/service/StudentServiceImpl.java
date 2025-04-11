@@ -40,6 +40,8 @@ public class StudentServiceImpl implements StudentService {
         Student existingStudent = findById(id);
         existingStudent.setName(studentToUpdate.getName());
         existingStudent.setRegistration(studentToUpdate.getRegistration());
+        existingStudent.setCourse(studentToUpdate.getCourse());
+        existingStudent.setNews(studentToUpdate.getNews());
         return studentRepository.save(existingStudent);
     }
 
