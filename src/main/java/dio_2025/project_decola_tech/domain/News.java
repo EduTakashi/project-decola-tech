@@ -18,9 +18,9 @@ public class News {
     public Long getId(){ return id; }
     public void setId(Long id) { this.id = id; }
 
-    private String getIcon() { return icon; }
-    private void setIcon(String icon) { this.icon = icon;}
+    public String getIcon() { return icon; }
+    public void setIcon(String icon) { this.icon = icon;}
 
-    private String getDescription() { return description; }
-    private void setDescription(String description) { this.description = description;}
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description;}
 }
