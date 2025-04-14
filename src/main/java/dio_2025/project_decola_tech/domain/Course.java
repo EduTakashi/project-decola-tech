@@ -26,4 +26,5 @@ public class Course {
 
     public String getSchedule() { return schedule; }
     public void setSchedule(String schedule) { this.schedule = schedule; }
+
 }

@@ -68,6 +68,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>3.4.3</version>
 				<configuration>
 					<mainClass>dio_2025.project_decola_tech.ProjectDecolaTechApplication</mainClass>
 				</configuration>

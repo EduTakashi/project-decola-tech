@@ -48,11 +48,6 @@ public class StudentServiceImpl implements StudentService {
         Student student = findById(id);
         studentRepository.delete(student);
     }
-
-
-
-
-
 }
 
 

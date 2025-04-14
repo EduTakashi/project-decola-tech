@@ -38,4 +38,6 @@ public class Student {
 
     public List<News> getNews() { return news; }
     public void setNews(List<News> news) { this.news = news; }
+
+
 }
