@@ -30,7 +30,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student create(Student studentToCreate){
         if(studentRepository.existsByRegistrationNumber(studentToCreate.getRegistration().getNumber())){
-            throw new IllegalArgumentException("O estudante com esse Id já existe");
+            throw new IllegalArgumentException("O estudante com esse Id já existe ou os dados já estão sendo usados");
         }
         return studentRepository.save(studentToCreate);
     }

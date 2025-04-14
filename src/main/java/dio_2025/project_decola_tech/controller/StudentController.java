@@ -20,7 +20,7 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @Operation(summary = "Get a user by ID")
+    @Operation(summary = "Get a student by ID")
     @GetMapping("{id}")
     public ResponseEntity<Student> findById(@PathVariable Long id){
         var student = studentService.findById(id);
