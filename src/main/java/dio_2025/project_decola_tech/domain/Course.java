@@ -11,6 +11,7 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String subjects;
     private String classroom;
     private String schedule;
